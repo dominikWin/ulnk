@@ -7,3 +7,4 @@ authors = ["Dominik Winecki <dominikwinecki@gmail.com>"]
 config = "0.6"
 log = "0.3.8"
 env_logger = "0.3"
+postgres  = "0.15.1"

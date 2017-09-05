@@ -7,10 +7,10 @@ const DEFAULT_CONFIG_FILE: &'static str = "ulnk.toml";
 
 #[derive(Debug)]
 pub struct Args {
-    dbpath: String,    // Database path
-    dbname: String,    // Database name
-    dbuname: String,   // Database user name
-    dbupasswd: String, // Database user password
+    pub dbpath: String,    // Database path and port
+    pub dbname: String,    // Database name
+    pub dbuname: String,   // Database user name
+    pub dbupasswd: String, // Database user password
 }
 
 impl Args {
