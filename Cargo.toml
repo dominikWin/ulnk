@@ -4,7 +4,9 @@ version = "0.1.0"
 authors = ["Dominik Winecki <dominikwinecki@gmail.com>"]
 
 [dependencies]
-config = "0.6"
-log = "0.3.8"
-env_logger = "0.3"
-postgres  = "0.15.1"
+config = "*"
+log = "*"
+env_logger = "*"
+postgres  = "*"
+futures = "0.1.14"
+hyper = "0.11"
