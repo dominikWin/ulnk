@@ -5,6 +5,7 @@ use std::process;
 
 const DEFAULT_CONFIG_FILE: &'static str = "ulnk.toml";
 
+#[derive(Debug)]
 pub struct Args {
     dbpath: String,    // Database path
     dbname: String,    // Database name

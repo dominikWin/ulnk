@@ -1,6 +1,10 @@
+#[macro_use]
+extern crate log;
+extern crate env_logger;
+
 mod args;
 
 fn main() {
-    println!("Hello World!");
-    let _ = args::Args::parse();
+    env_logger::init().unwrap();
+    info!("{:?}", args::Args::parse());
 }
