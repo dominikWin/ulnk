@@ -1,4 +1,6 @@
-use postgres::{Connection, TlsMode};
+extern crate postgres;
+
+use self::postgres::{Connection, TlsMode};
 use args::Args;
 
 pub struct Database {
