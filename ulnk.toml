@@ -1,1 +1,4 @@
-name = "Hi"
+dbpath = "localhost"
+dbname = "ulkn"
+dbuname = "user"
+dbupasswd = "passwd"
