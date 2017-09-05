@@ -13,6 +13,7 @@ fn main() {
     let args = Args::parse();
     info!("{:?}", args);
     let db = Database::new(&args).unwrap();
+    db.init_db();
 
     db.close();
 }
