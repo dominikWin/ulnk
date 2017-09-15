@@ -1,15 +1,15 @@
 extern crate postgres;
 
 use self::postgres::{Connection, TlsMode};
-use args::Args;
+use config::Config;
 
 pub struct Database {
     conn: Connection,
 }
 
 impl Database {
-    pub fn new(args: &Args) -> Option<Database> {
-        let connect_params: String = format!("postgresql://{}:{}@{}/{}", args.dbuname, args.dbupasswd, args.dbpath, args.dbname);
+    pub fn new(config: &Config) -> Option<Database> {
+        let connect_params: String = format!("postgresql://{}:{}@{}/{}", config.dbuname, config.dbupasswd, config.dbpath, config.dbname);
         let cp = connect_params.clone(); // For logging
         let conn = Connection::connect(connect_params, TlsMode::None);
         if conn.is_err() {
@@ -28,7 +28,7 @@ impl Database {
         info!("Closed connection to database");
     }
 
-    pub fn init_db(&self) {
+    pub fn init_db(self) {
         self.exec_force("CREATE TABLE IF NOT EXISTS refs (
                         id     SERIAL PRIMARY KEY,
                         shortl VARCHAR[20] NOT NULL,

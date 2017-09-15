@@ -4,19 +4,19 @@ extern crate env_logger;
 extern crate hyper;
 extern crate futures;
 
-mod args;
+mod config;
 mod db;
 mod api_server;
 
-use args::Args;
+use config::Config;
 use db::Database;
 
 fn main() {
     env_logger::init().unwrap();
-    let args = Args::parse();
-    info!("{:?}", args);
-    let db = Database::new(&args).unwrap();
-    db.init_db();
+    let config = Config::parse();
+    info!("{:?}", config);
+    let db = Database::new(&config).unwrap();
+    // db.init_db();
 
     api_server::start();
 
